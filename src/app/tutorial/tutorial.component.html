@@ -1,0 +1,12 @@
+<div class="tutorialBox" [ngStyle]="getStyle()">
+  <button mat-mini-fab class="dialogCloseBtn" (click)="closeDialog()">
+    <span class="icon icon-functional" data-icon="x" style="font-size:12px;"></span>
+  </button>
+  <br>
+  <div id="tutorial">
+    <h2>{{dialogData.title}}</h2>
+    <p>{{dialogData.text}}</p>
+    <iframe width="100%" height="500" [src]= "sanitizer.bypassSecurityTrustResourceUrl(dialogData.url)" frameborder="1"
+            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" autoplay="1" allowfullscreen></iframe>
+  </div>
+</div>
