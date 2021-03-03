@@ -1,27 +1,99 @@
-# PdbeKbTutorialComponent
+PDBe-KB Tutorial Component
+=
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.6.
+This is the repository of a lightweight Angular 7+ web component that displays all the available PDB entries for a particular UniProt accession in a tabular format. 
 
-## Development server
+This component is used on the PDBe-KB Aggregated Views of Proteins to display a table of all the UniProt accessions and processed protein identifiers (PRO id) for a particular PDB entry.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+### Example:
 
-## Code scaffolding
+<img src="https://raw.githubusercontent.com/PDBe-KB/component-tutorial/main/pdbe-kb-tutorial-component.png">
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+## Quick Start
 
-## Build
+Get the code and install dependencies
+```
+git clone https://github.com/PDBe-KB/component-tutorial.git
+cd component-tutorial
+npm i
+```
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+Running the app
+```
+ng serve
+```
 
-## Running unit tests
+Running tests
+```
+ng test
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Basic usage
 
-## Running end-to-end tests
+The pinging component can be added to any Angular7+ apps.
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+Import the component (e.g. in app.module.ts):
+```
+import {BrowserModule} from '@angular/platform-browser';
+import {NgModule} from '@angular/core';
+import {NoopAnimationsModule} from '@angular/platform-browser/animations';
+import {
+  MatButtonModule, MatDialogModule, MatMenuModule,
+  MatRadioModule, MatCheckboxModule, MatTooltipModule
+} from '@angular/material';
 
-## Further help
+import {AppComponent} from './app.component';
+import {TutorialComponent} from './tutorial/tutorial.component';
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+@NgModule({
+  declarations: [
+    AppComponent,
+    TutorialComponent
+  ],
+  imports: [
+    BrowserModule,
+    NoopAnimationsModule,
+    MatButtonModule,
+    MatDialogModule,
+    MatMenuModule,
+    MatRadioModule,
+    MatCheckboxModule,
+    MatTooltipModule
+  ],
+  entryComponents: [
+    TutorialComponent
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule {
+}
+```
+
+Adding the pinging component to a template:
+```angular2html
+<span>
+  <a (click)="openDialog()" style="border-bottom-style: none;">
+    <i class="icon icon-generic" data-icon="?"></i>
+  </a>
+</span>
+
+```
+
+## Versioning
+
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/PDBe-KB/component-tutorial/tags).
+
+## Authors
+
+* **Mihaly Varadi** - *Migrating to GitHub* - [mvaradi](https://github.com/mvaradi)
+
+See also the list of [contributors](https://github.com/PDBe-KB/component-tutorial/contributors) who participated in this project.
+
+## License
+
+This project is licensed under the EMBL-EBI License - see the [LICENSE](LICENSE) file for details
+
+## Acknowledgements
+
+We would like to thank the [PDBe team](https://www.pdbe.org) and the [PDBe-KB partner resources](https://github.com/PDBe-KB/pdbe-kb-manual/wiki/PDBe-KB-Annotations) for their feedback and contributions.
