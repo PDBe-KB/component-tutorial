@@ -22,4 +22,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
+  it('openDialog() should work', async(() => {
+    const fixture = TestBed.createComponent(AppComponent);
+    const app = fixture.debugElement.componentInstance;
+    app.data = 'foo';
+    app.dialog.open = function () {
+      return null;
+    };
+    expect(app.openDialog()).toBeTruthy();
+    app.data = undefined;
+    expect(app.openDialog()).toBeFalsy();
+  }));
+
 });

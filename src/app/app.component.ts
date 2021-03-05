@@ -33,6 +33,6 @@ export class AppComponent {
         data: this.data
       }
     );
-    return;
+    return this.data;
   }
 }
