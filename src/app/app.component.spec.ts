@@ -1,6 +1,7 @@
-import { TestBed, async } from '@angular/core/testing';
-import { AppComponent } from './app.component';
-import { TutorialComponent } from './tutorial/tutorial.component';
+import {TestBed, async} from '@angular/core/testing';
+import {AppComponent} from './app.component';
+import {TutorialComponent} from './tutorial/tutorial.component';
+import {MatDialogModule} from '@angular/material';
 
 describe('AppComponent', () => {
   beforeEach(async(() => {
@@ -9,6 +10,9 @@ describe('AppComponent', () => {
         AppComponent,
         TutorialComponent
       ],
+      imports: [
+        MatDialogModule
+      ]
     }).compileComponents();
   }));
 
