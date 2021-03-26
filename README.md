@@ -3,7 +3,7 @@ PDBe-KB Tutorial Component
 
 [![Build Status](https://travis-ci.com/PDBe-KB/component-tutorial.svg?branch=main)](https://travis-ci.com/PDBe-KB/component-tutorial)
 [![codecov](https://codecov.io/gh/PDBe-KB/component-tutorial/branch/main/graph/badge.svg?token=BkbaUkNjUw)](https://codecov.io/gh/PDBe-KB/component-tutorial)
-[![Build Status](https://travis-ci.com/PDBe-KB/component-tutorial.svg?branch=main)](https://travis-ci.com/PDBe-KB/component-tutorial)
+[![Maintainability](https://api.codeclimate.com/v1/badges/db7b6f4b831ec5bac982/maintainability)](https://codeclimate.com/github/PDBe-KB/component-tutorial/maintainability)
 
 This is the repository of a lightweight Angular 7+ web component that displays all the available PDB entries for a particular UniProt accession in a tabular format. 
 
