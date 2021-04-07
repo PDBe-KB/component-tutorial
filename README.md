@@ -5,9 +5,9 @@ PDBe-KB Tutorial Component
 [![codecov](https://codecov.io/gh/PDBe-KB/component-tutorial/branch/main/graph/badge.svg?token=BkbaUkNjUw)](https://codecov.io/gh/PDBe-KB/component-tutorial)
 [![Build Status](https://travis-ci.com/PDBe-KB/component-tutorial.svg?branch=main)](https://travis-ci.com/PDBe-KB/component-tutorial)
 
-This is the repository of a lightweight Angular 7+ web component that displays all the available PDB entries for a particular UniProt accession in a tabular format. 
+This repository is for the codebase of a lightweight Angular v7 web component that displays embedded YouTube videos. 
 
-This component is used on the PDBe-KB Aggregated Views of Proteins to display a table of all the UniProt accessions and processed protein identifiers (PRO id) for a particular PDB entry.
+This component is used on the PDBe-KB Aggregated Views of Proteins to display tutorial videos which describe the various functionality of these pages.
 
 ### Example:
 
@@ -34,7 +34,7 @@ ng test
 
 ## Dependencies
 
-The main template should also have the following CSS import:
+The main template (i.e. `index.html` by default) should also have the following CSS imports:
 ```angular2html
 <link rel="stylesheet" href="https://ebi.emblstatic.net/web_guidelines/EBI-Framework/v1.3/css/ebi-global.css" type="text/css" media="all"/>
 <link rel="stylesheet" href="https://ebi.emblstatic.net/web_guidelines/EBI-Icon-fonts/v1.3/fonts.css" type="text/css" media="all"/>
@@ -43,9 +43,11 @@ The main template should also have the following CSS import:
 
 ## Basic usage
 
-The pinging component can be added to any Angular7+ apps.
+The component can be added to any Angular v7 apps.
 
-Import the component (e.g. in app.module.ts):
+#### 1.) Import the component:
+
+Import the component in `app.module.ts` by default.
 ```
 import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
@@ -83,23 +85,34 @@ export class AppModule {
 }
 ```
 
-Adding the pinging component to a template:
+#### 2.) Add the component to a template:
 ```angular2html
 <span>
   <a (click)="openDialog()" style="border-bottom-style: none;">
     <i class="icon icon-generic" data-icon="?"></i>
   </a>
 </span>
-
 ```
 
+The data model for the input data is described in 
+`src/app/tutorial/tutorial.models.ts`
+
+##### Example input data
+
+```angular2html
+{
+    title: 'How to use the structural coverage section',
+    text: 'This short video gives an overview of how to use ...',
+    url: 'https://www.youtube.com/embed/knwZnt3i95I?autoplay=1'
+}
+```
 ## Versioning
 
 We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/PDBe-KB/component-tutorial/tags).
 
 ## Authors
 
-* **Mihaly Varadi** - *Migrating to GitHub* - [mvaradi](https://github.com/mvaradi)
+* **Mihaly Varadi** - *Initial Implementation* - [mvaradi](https://github.com/mvaradi)
 
 See also the list of [contributors](https://github.com/PDBe-KB/component-tutorial/contributors) who participated in this project.
 
